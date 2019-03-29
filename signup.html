@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script type="text/javascript" src="./js/signup.js"></script>
+		<link rel="stylesheet" href="./css/signup.css">
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+	</head>
+	<body onmousemove="validate()">
+		<div class='navbar'>
+			<a class='active' href='index.html'>Vacation Plan</a>
+			<a href='#bg4'>About</a>
+			<a href='#bg1'>Book Hotel</a>
+			<a href='#bg3'>Book Flight</a>
+			<a href='#bg2'>Holiday Package</a>
+			<a href='#signup'>Sign Up</a>
+			<a href='#login'>Log In</a>
+			<a href='#bg5'>Contact Us</a><img src="./img/contact.png" width="20px" height="20px" style="padding-top: 19px; margin-left: -37px;">
+		</div>
+		<h2 style="margin-top: 18%;">Username<input type="text" placeholder=" New Username" id="username"></h2>
+		<h2 style="margin-top: 3%;">
+			Password
+			<input type="password" placeholder="New Password" id="password">
+		</h2>
+		<img src="./img/open.png" id="pas-image" name="open" onclick="changeVisibility()">
+		<button type="button">Sign Up</button>
+		<div id="snackbar"></div>
+	</body>
+</html>

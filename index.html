@@ -1,0 +1,75 @@
+<html id="html">
+    <head>
+        <script src="./js/index.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+    </head>
+    <body onclick="showSetter()">
+        <div class='navbar'>
+            <a class='active' href='#home'>Vacation Plan</a>
+            <a href='#bg4'>About</a>
+            <a href='#bg1'>Book Hotel</a>
+            <a href='#bg3'>Book Flight</a>
+            <a href='#bg2'>Holiday Package</a>
+            <a href='signup.html'>Sign Up</a>
+            <a href='#login'>Log In</a>
+            <a href='#bg5'>Contact Us</a><img src="./img/contact.png" width="20px" height="20px" style="padding-top: 19px; margin-left: -37px;">
+        </div>
+        <div class="paralax1" id="bg1">
+            <!-- Hotel Booking -->
+            <div class="hotels"></div>
+            <div class="container">
+                <img src="./img/hotel.jpg" width="50px" style="margin-left: 10px; margin-top: 10px;"><br>
+                <input type="text" class="largeInput" style="margin-top: 20px;" placeholder="Destination, Airport">
+                <img src="./img/location.png" width="20px" style="margin-left: 15px; margin-top: -35px;"><br>
+                <input type="date" id="checkin" class="normalInput" style="margin-top: 15px;">
+                <input type="date" id="checkout" class="normalInput" style="margin-top: 15px;"><br>
+                <p style="margin-top: -45px; margin-left: 12px; font-size: 8pt;">Check-in</p><br>
+                <p style="font-size: 8pt; margin-left: 229px; margin-top: -40px;">Check-out</p><br>
+                <img src="./img/calender.png" width="30px" style="margin-left: 15px; margin-top: -27px;"><br>
+                <img src="./img/calender.png" width="30px" style="margin-left: 232px; margin-top: -30px;"><br>
+                <button type="button" class="travellerButton" id="travellers" style="margin-top: 25px; padding-right: -110px;" onclick="showSetter()"></button><br>
+                <img src="./img/travellers.png" width="40px" style="margin-left: 20px; margin-top: -40px;"><br>
+                <p style="margin-top: -45px; margin-left: 20px; font-size: 8pt;">Travellers</p><br>
+                <button type="button" class="searchButton">Search</button>
+            </div>
+            <div id="people">
+                <caret class="caret"></caret>
+                <p style="padding-left: 10px; color: silver"><strong>Room 1</strong></p><br>
+                <p style="padding-left: 10px; margin-top: -20px;">
+                    <strong>Adults</strong>
+                    <button class="disabled" disabled onclick="update()" id="ad-" type="button" style="margin-left: 145px;" onmouseover="this.style.borderColor='#007FFF'" onmouseout="changeBorderColor()">&#8722;</button>
+                    <span id=adults> 1 </span>
+                    <button class="enabled" onclick="update()" id="ad+" type="button" onmouseover="this.style.borderColor='#007FFF'" onmouseout="changeBorderColor()">&#43;</button>     
+                </p><br>
+                <p style="padding-left: 10px; margin-top: -10px;">
+                    <strong>Children</strong>
+                    <button class="disabled" disabled onclick="update()" id="ch-" type="button" style="margin-left: 130px;" onmouseover="this.style.borderColor='#007FFF'" onmouseout="changeBorderColor()">&#8722;</button>
+                    <span id=children> 0 </span>
+                    <button class="enabled" onclick="update()" id="ch+" type="button" onmouseover="this.style.borderColor='#007FFF'" onmouseout="changeBorderColor()">&#43;</button><br>
+                    <span style="font-size: 8pt;">Ages (2-17)</span>     
+                </p><br>
+                <p style="padding-left: 10px; margin-top: -20px;">
+                        <strong>Room</strong>
+                        <button class="disabled" disabled onclick="update()" id="rm-" type="button" style="margin-left: 149px;" onmouseover="this.style.borderColor='#007FFF'" onmouseout="changeBorderColor()">&#8722;</button>
+                        <span id=room> 1 </span>
+                        <button class="enabled" onclick="update()" id="rm+" type="button" onmouseover="this.style.borderColor='#007FFF'" onmouseout="changeBorderColor()">&#43;</button>     
+                    </p>
+                <button type="button" id="closeDiv" style="font-size: 10pt; border:none; background: none; color: silver; margin-left: 223px;" onmouseover="this.style.color='black'" onmouseout="this.style.color='silver'" onclick="people.style.display='none'">Close x</button>
+            </div>
+            <img src="./img/backtotop.png" width="5%" height="10%" id="backtotop" onclick="backToTop()">
+        </div>
+        <div class="paralax1" id="bg2">
+            <!-- Holiday Package -->
+        </div>
+        <div class="paralax1" id="bg3">
+            <!-- Flight -->
+        </div>
+        <div class="paralax1" id="bg4">
+            <!-- About -->
+        </div>
+        <div class="paralax1" id="bg5">
+            <!-- contact us -->
+        </div>
+
+    </body>
+</html>

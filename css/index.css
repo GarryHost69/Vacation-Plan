@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+
+:focus {
+	outline: 0 !important;
+}
+
+.disabled {
+    color: silver;
+    border-color: silver;
+    border-radius: 10px;
+}
+
+.enabled {
+    color: black;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.caret {
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #f2f2f2;
+    margin-top: -10px;
+}
+ 
+#people {
+    width: 285px;
+    position: absolute;
+    height: 200px;
+    display: none;
+    background-color: #f2f2f2;
+    margin-left: 520px;
+    margin-top: 365px;
+} 
+
+
+.hotels {
+    background-color:#181818;
+    opacity: 0.8;
+    width: 60%;
+    border-radius: 5px;
+    height: 60%;
+    margin-top: 7%;
+    margin-left: 19%;
+    position: absolute;
+}
+
+.container {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    margin-top: 7%;
+    margin-left: 19%;
+}
+
+
+.largeInput {
+	width: 100%;
+	height: 15%;
+	border-radius: 3px;
+	background-color: #fffff0;
+    padding-left: 5%;
+    font-size: 15pt;
+	border-color: #33CCFF;
+	margin-left: 1.5%;
+}
+
+.normalInput {
+    width: 30%;
+    height: 15%;
+	border-radius: 3px;
+	background-color: #fffff0;
+    padding-left: 10%;
+    font-size: 10pt;
+	border-color: #33CCFF;
+	margin-left: 1.5%;
+}
+
+.travellerButton {
+    width: 62%;
+	height: 15%;
+	border-radius: 3px;
+	background-color: #A8A8A8;
+    padding-left: 5%;
+    font-size: 15pt;
+	margin-left: 1.5%;
+}
+
+.searchButton {
+    width: 22%;
+	height: 15%;
+	border-radius: 10px;
+	background-color:#337AB7;
+    font-size: 17pt;
+    margin-top: 40px;
+	margin-left: 1.5%;
+}
+
+#backtotop {
+    display: none;
+    position: fixed;
+    margin-left: 94%;
+    margin-top: 38%;
+}
+
+.paralax1 {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.navbar {
+    width: 100%;
+    height: 10%;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar a {
+    height: 100%;
+    width: 9.50%;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1.5%;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #2f68c4;
+    color: white;
+}
+
+@keyframes buttonAnimation1 {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes buttonAnimation2 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+}
