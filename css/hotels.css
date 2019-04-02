@@ -1,0 +1,56 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    background-image: url(../img/index5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hotelsList {
+    width: 50%;
+    height: 70%;
+    margin-left: 25%;
+    margin-top: 5%;
+    background-color: aliceblue;
+    opacity: 0.9;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.hotelTable {
+    width: 95%;
+    border: 3px solid black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.overflow {
+    overflow-y: auto;
+    height: 95%;
+}
+
+.fs {
+    height: 97%;
+    border: 1px solid lightgrey;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    padding: 5px;
+    vertical-align: top;
+    font-size: 21px;
+}
+
+td, th {
+    border: 3px solid black;
+    font-weight: bold;
+}
+
+.tb {
+    width: 70px;
+    background-color: dodgerblue;
+    border-radius: 8px;
+    height: 30px;
+    font-weight: bold;
+}

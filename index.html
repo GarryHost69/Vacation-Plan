@@ -1,6 +1,6 @@
 <html id="html">
     <head>
-        <script src="./js/index.js"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
         <link rel="stylesheet" type="text/css" href="./css/index.css">
     </head>
     <body onclick="showSetter()">
@@ -30,7 +30,7 @@
                 <button type="button" class="travellerButton" id="travellers" style="margin-top: 25px; padding-right: -110px;" onclick="showSetter()"></button><br>
                 <img src="./img/travellers.png" width="40px" style="margin-left: 20px; margin-top: -40px;"><br>
                 <p style="margin-top: -45px; margin-left: 20px; font-size: 8pt;">Travellers</p><br>
-                <button type="button" class="searchButton">Search</button>
+                <button type="button" class="searchButton" onclick="verify()">Search</button>
             </div>
             <div id="people">
                 <caret class="caret"></caret>
@@ -57,6 +57,7 @@
                 <button type="button" id="closeDiv" style="font-size: 10pt; border:none; background: none; color: silver; margin-left: 223px;" onmouseover="this.style.color='black'" onmouseout="this.style.color='silver'" onclick="people.style.display='none'">Close x</button>
             </div>
             <div class="autocomplete" id="auto"></div>
+            <div id="snackbar"></div>
             <img src="./img/backtotop.png" width="5%" height="10%" id="backtotop" onclick="backToTop()">
         </div>
         <div class="paralax1" id="bg2">

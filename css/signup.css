@@ -7,14 +7,17 @@ body {
     background-size: cover;
     background-position: center;
 }
+
 :focus {
     outline: 0 !important;
 }
+
 img {
     width: 2%;
     margin-top: -3.6%;
     margin-left: 65.8%;
 }
+
 input[type=text] {
     width: 40%;
     height: 5%;
@@ -24,6 +27,7 @@ input[type=text] {
     border-color: #010b13;
     margin-left: 2%;
 }
+
 input[type=password] {
     width: 40%;
     height: 5%;
@@ -33,10 +37,12 @@ input[type=password] {
     border-color: #010b13;
     margin-left: 1.6%;
 }
+
 h2 {
     font-family: arial;
     margin-left: 30%;
 }
+
 button {
     font-size: 15pt;
     font-family: arial;
@@ -48,6 +54,7 @@ button {
     border-color: #010b13;
     background-color: #fffff0;
 }
+
 #snackbar {
     visibility: hidden;
     width: 20%;
@@ -64,23 +71,28 @@ button {
     left: 50%;
     bottom: 30px;
 }
+
 #snackbar.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
 }
+
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
 }
+
 @-webkit-keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}

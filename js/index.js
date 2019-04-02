@@ -1,7 +1,8 @@
 
 var backtotop, travellers, checkin, checkout, date, setter, people, adults = 1, room = 1, children = 0;
 var removeAdults, removeChildren, removeRoom, ad, ch, rm, addAdults, addChildren, addRoom, search;
-var divList = [];
+var divList = [], toast;
+
 window.onload = function() {
     var bg1 = document.getElementById('bg1'),
     bg2 = document.getElementById('bg2'),
@@ -24,6 +25,7 @@ window.onload = function() {
     addChildren = document.getElementById("ch+");
     addAdults = document.getElementById("ad+");
     search = document.getElementById("countrySearch");
+    toast = document.getElementById("snackbar");
     date = new Date();
     var min = date.getFullYear() + "-" + "0" + (parseInt(date.getMonth()) + 1) + "-" + "0" + date.getDate();
     bg1.style.backgroundImage = "url(img/index1.jpg)";
@@ -158,6 +160,65 @@ window.onload = function() {
                 removeDiv();
             }
         }
+    });
+
+    checkin.addEventListener('input', function() {
+        var v = this.value.split('-');
+        var year = parseInt(v[0]);
+        var month = parseInt(v[1]);
+        var day = parseInt(v[2]);
+        if (month == 12 && day == 31) { 
+            month = '01';
+            day = '01';
+            year = (year += 1).toString();
+        }
+        else 
+        if (year % 4 == 0 && month == 2 && day == 29) {
+            day = '01';
+            month = '03';
+            year = year.toString();
+        }
+        else 
+        if (year % 4 != 0 && month == 2 && day == 28) {
+            day = '01';
+            month = '03';
+            year = year.toString();
+        }
+        else {
+            if (day == 31) {
+                day = '01';
+                month = (month + 1).toString();
+                year = year.toString();
+            }
+            else 
+            if (day == 30) {
+                if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+                    day = (day + 1).toString();
+                    month = month.toString();
+                    year = year.toString(); 
+                }
+                else {
+                    day = '01';
+                    month = (month + 1).toString();
+                    year = year.toString();
+                }
+            }
+            else {
+                day = (day + 1).toString();
+                month = month.toString();
+                year = year.toString();
+            }
+            
+        }
+        if (day.length == 1) {
+            day = '0' + day;
+        }
+        if (month.length == 1) {
+            month = '0' + month;
+        }
+        var mindate = year + "-" + month + "-" + day;
+        checkout.value = mindate;
+        checkout.min = mindate;
     });
 }
 
@@ -321,6 +382,72 @@ function update() {
         }
     }
     travellers.innerText = msg;
+}
+
+function verify() {
+    if (search.value == '') {
+        toast.style.width = "20%";
+        toast.style.height = "5%";
+        toast.style.paddingTop = 15;
+        toast.innerText = "Please Enter a Destination.";
+        toast.className = "show";
+        setTimeout(function() {
+            toast.className = toast.className.replace("show", "");
+        }, 5000);
+    }
+    else 
+    if (!validateDestination()) {
+        toast.style.width = "20%";
+        toast.style.height = "5%";
+        toast.style.paddingTop = 15;
+        toast.innerText = "Please Enter a Valid Destination.";
+        toast.className = "show";
+        setTimeout(function() {
+            toast.className = toast.className.replace("show", "");
+        }, 5000);
+    }
+    else 
+    if (checkin.value == '') {
+        toast.style.width = "20%";
+        toast.style.height = "5%";
+        toast.style.paddingTop = 15;
+        toast.innerText = "Please Select a Check In Date.";
+        toast.className = "show";
+        setTimeout(function() {
+            toast.className = toast.className.replace("show", "");
+        }, 5000);
+    }
+    else 
+    if (checkout.value == '') {
+        toast.style.width = "20%";
+        toast.style.height = "5%";
+        toast.style.paddingTop = 15;
+        toast.innerText = "Please Select a Check Out Date.";
+        toast.className = "show";
+        setTimeout(function() {
+            toast.className = toast.className.replace("show", "");
+        }, 5000);
+    }
+    else {
+        var href = './Hotels.html';
+        localStorage.setItem('rooms', room);
+        localStorage.setItem('adults', adults);
+        localStorage.setItem('children', children);
+        localStorage.setItem('country', search.value);
+        localStorage.setItem('checkin', checkin.value);
+        localStorage.setItem('checkout', checkout.value);
+        window.location = href;
+    }
+}
+
+function validateDestination() {
+    var val = search.value;
+    for (var i = 0; i < countries.length; i++) {
+        if (countries[i].country == val) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function changeBorderColor() {
@@ -1058,268 +1185,5 @@ var countries = [
     },
     {
         "country": "Zimbabwe"
-    }
-];
-
-var hotels = [
-    {
-        "Company": "OYO",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "AccorHotels",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Aman Resorts",
-        "Location": ["Singapore"]
-    },
-    {
-        "Company": "APA Group",
-        "Location": ["Japan", "United States", "Canada"]
-    },
-    {
-        "Company": "The Ascott Limited",
-        "Location": ["America", "Asia Pacific", "Europe", "Middle East"]
-    },
-    {
-        "Company": "Banyan Tree Holdings",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Barrière",
-        "Location": ["France", "Morocco"]
-    },
-    {
-        "Company": "Best Western Hotels",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "BTG Homeinn hotel group",
-        "Location": ["China"]
-    },
-    {
-        "Company": "Radisson Hotel Group",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "China Lodging Group, Limited (Huazhu Hotels Group)",
-        "Location": ["China"]
-    },
-    {
-        "Company": "Choice Hotels",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Coast Hotels",
-        "Location": ["Canada", "United States"]
-    },
-    {
-        "Company": "Dalata Hotel Group",
-        "Location": ["Ireland", "United Kingdom"]
-    },
-    {
-        "Company": "Dorchester Collection",
-        "Location": ["Europe", "United States"]
-    },
-    {
-        "Company": "Drury Hotels",
-        "Location": ["United States"]
-    },
-    {
-        "Company": "Dusit Thani Group",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Extended Stay America, Inc.",
-        "Location": ["United States", "Canada"]
-    },
-    {
-        "Company": "Four Seasons Hotels and Resorts",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "G6 Hospitality LLC",
-        "Location": ["United States", "Canada", "Latin America"]
-    },
-    {
-        "Company": "GreenTree Inns Hotel Management Group, Inc.",
-        "Location": ["China", "United States"]
-    },
-    {
-        "Company": "Hilton Worldwide",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Hongkong and Shanghai Hotels",
-        "Location": ["Asia-Pacific, North America, Europe"]
-    },
-    {
-        "Company": "Hoshino Resorts",
-        "Location": ["Japan", "Indonesia"]
-    },
-    {
-        "Company": "Hyatt Hotels Corporation",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "InterContinental Hotels Group (IHG)",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Interstate Hotel & Resorts",
-        "Location": ["United States", "Europe"]
-    },
-    {
-        "Company": "InTown Suites",
-        "Location": ["United States"]
-    },
-    {
-        "Company": "Jin Jiang International",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Jumeirah",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Kempinski",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Langham Hospitality Group",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Loews Hotels",
-        "Location": ["United States"]
-    },
-    {
-        "Company": "Lotte Hotels & Resorts",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Magnuson Hotels",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Mandarin Oriental Hotel Group",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Marriott International",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Meliá Hotels International, S.A.",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Millennium & Copthorne Hotels",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "MGM Resorts International",
-        "Location": ["Asia", "United States"]
-    },
-    {
-        "Company": "Minor Hotels",
-        "Location": ["Asia Pacific", "Europe", "Middle East", "Africa"]
-    },
-    {
-        "Company": "NH Hotel Group[52]",
-        "Location": ["Europe", "America", "Africa", "China"]
-    },
-    {
-        "Company": "The Oberoi Group",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Okura Nikko Hotel Management[54]",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Omni Hotels & Resorts",
-        "Location": ["United States", "Canada", "Mexico"]
-    },
-    {
-        "Company": "Pan Pacific Hotels and Resorts",
-        "Location": ["Asia-Pacific", "United States", "Canada"]
-    },
-    {
-        "Company": "Prince Hotels",
-        "Location": ["Japan", "Taiwan", "China", "United States"]
-    },
-    {
-        "Company": "Red Lion Hotels Corporation",
-        "Location": ["United States"]
-    },
-    {
-        "Company": "Red Roof Inn",
-        "Location": ["United States", "Brazil", "Canada", "Thailand", "Japan"]
-    },
-    {
-        "Company": "RIU Hotels & Resorts",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Rocco Forte Hotels",
-        "Location": ["Asia", "Europe"]
-    },
-    {
-        "Company": "Rosewood Hotel Group",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Scandic Hotels",
-        "Location": ["Sweden", "Norway", "Denmark", "Finland", "Germany", "Poland", "Belgium"]
-    },
-    {
-        "Company": "Shangri-La Hotels and Resorts",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Shilo Inns",
-        "Location": ["United States"]
-    },
-    {
-        "Company": "Taj Hotels Resorts and Palaces",
-        "Location": ["India", "United States", "South Africa", "United Kingdom", "Australia"]
-    },
-    {
-        "Company": "The Dedica Anthology Hotels",
-        "Location": ["Europe"]
-    },
-    {
-        "Company": "Tokyu Hotels",
-        "Location": ["Japan", "Taiwan", "United States"]
-    },
-    {
-        "Company": "Toyoko Inn",
-        "Location": ["Japan"]
-    },
-    {
-        "Company": "Travelodge",
-        "Location": ["United Kingdom", "Ireland", "Spain"]
-    },
-    {
-        "Company": "Treebo",
-        "Location": ["India"]
-    },
-    {
-        "Company": "Warwick Hotels and Resorts",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Westgate Resorts",
-        "Location": ["United States"]
-    },
-    {
-        "Company": "Wyndham Hotels & Resorts",
-        "Location": ["Worldwide"]
-    },
-    {
-        "Company": "Whitbread plc",
-        "Location": ["China", "Dubai", "Europe", "India", "Ireland", "Russia", "United Kingdom"]
     }
 ];

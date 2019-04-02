@@ -171,6 +171,49 @@ body {
     border-color: #181818;
 }
 
+#snackbar {
+    visibility: hidden;
+    width: 20%;
+    margin-left: -10%;
+    margin-bottom: 33%;
+    height: 0.5%;
+    background-color: #fff;
+    color: #333;
+    font-family: arial;
+    text-align: center;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
 
 @keyframes buttonAnimation1 {
     from {
