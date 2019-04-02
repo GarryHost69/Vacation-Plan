@@ -19,7 +19,7 @@
             <div class="hotels"></div>
             <div class="container">
                 <img src="./img/hotel.jpg" width="50px" style="margin-left: 10px; margin-top: 10px;"><br>
-                <input type="text" class="largeInput" style="margin-top: 20px;" placeholder="Destination, Airport">
+                <input type="text" class="largeInput" id="countrySearch" style="margin-top: 20px;" placeholder="Destination">
                 <img src="./img/location.png" width="20px" style="margin-left: 15px; margin-top: -35px;"><br>
                 <input type="date" id="checkin" class="normalInput" style="margin-top: 15px;">
                 <input type="date" id="checkout" class="normalInput" style="margin-top: 15px;"><br>
@@ -56,6 +56,7 @@
                     </p>
                 <button type="button" id="closeDiv" style="font-size: 10pt; border:none; background: none; color: silver; margin-left: 223px;" onmouseover="this.style.color='black'" onmouseout="this.style.color='silver'" onclick="people.style.display='none'">Close x</button>
             </div>
+            <div class="autocomplete" id="auto"></div>
             <img src="./img/backtotop.png" width="5%" height="10%" id="backtotop" onclick="backToTop()">
         </div>
         <div class="paralax1" id="bg2">

@@ -146,6 +146,32 @@ body {
     color: white;
 }
 
+.autocomplete {
+    width: 670px;
+    height: 50px;
+    margin-left: 265px;
+    margin-top: 220px;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #181818;
+    display: none;
+}
+
+.autocomplete2 {
+    width: 670px;
+    height: 50px;
+    margin-left: -3px;
+    margin-top: -10px;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #181818;
+}
+
+
 @keyframes buttonAnimation1 {
     from {
         opacity: 0;
