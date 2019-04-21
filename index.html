@@ -5,17 +5,16 @@
     </head>
     <body onclick="showSetter()">
         <div class='navbar'>
-            <a class='active' href='#home'>Vacation Plan</a>
+            <a class='active' href='#bg1'>Vacation Plan</a>
             <a href='#bg4'>About</a>
             <a href='#bg1'>Book Hotel</a>
             <a href='#bg3'>Book Flight</a>
             <a href='#bg2'>Holiday Package</a>
             <a href='signup.html'>Sign Up</a>
-            <a href='#login'>Log In</a>
-            <a href='#bg5'>Contact Us</a><img src="./img/contact.png" width="20px" height="20px" style="padding-top: 19px; margin-left: -37px;">
+            <a href='login.html'>Log In</a>
+            <a href='#bg5'>Contact Us</a>
         </div>
-        <div class="paralax1" id="bg1">
-            <!-- Hotel Booking -->
+        <div class="paralax" id="bg1">
             <div class="hotels"></div>
             <div class="container">
                 <img src="./img/hotel.jpg" width="50px" style="margin-left: 10px; margin-top: 10px;"><br>
@@ -57,21 +56,20 @@
                 <button type="button" id="closeDiv" style="font-size: 10pt; border:none; background: none; color: silver; margin-left: 223px;" onmouseover="this.style.color='black'" onmouseout="this.style.color='silver'" onclick="people.style.display='none'">Close x</button>
             </div>
             <div class="autocomplete" id="auto"></div>
-            <div id="snackbar"></div>
+            <div id="toast"></div>
             <img src="./img/backtotop.png" width="5%" height="10%" id="backtotop" onclick="backToTop()">
         </div>
-        <div class="paralax1" id="bg2">
+        <div class="paralax" id="bg2">
             <!-- Holiday Package -->
         </div>
-        <div class="paralax1" id="bg3">
+        <div class="paralax" id="bg3">
             <!-- Flight -->
         </div>
-        <div class="paralax1" id="bg4">
+        <div class="paralax" id="bg4">
             <!-- About -->
         </div>
-        <div class="paralax1" id="bg5">
+        <div class="paralax" id="bg5">
             <!-- contact us -->
         </div>
-
     </body>
 </html>

@@ -2,7 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     user-select: none;
-    background-image: url(../img/index4.jpg);
+    background-image: url(../img/index7.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -12,46 +12,51 @@ body {
     outline: 0 !important;
 }
 
+.forgot-link {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
 img {
-    width: 2%;
-    margin-top: -3.6%;
-    margin-left: 65.8%;
+    width: 3%;
+    margin-left: 46.5%;
+    margin-top: -3.4%;
+}
+
+.login-page {
+    margin-top: 10%;
+    margin-left: 32%;
 }
 
 input[type=text] {
-    width: 40%;
+    width: 50%;
     height: 5%;
+    margin-top: 4%;
+    padding: 1%;
     border-radius: 5px;
     background-color: #fffff0;
-    padding: 1%;
     border-color: #010b13;
-    margin-left: 7.4%;
 }
 
 input[type=password] {
-    width: 40%;
+    width: 50%;
     height: 5%;
+    margin-top: 4%;
     padding: 1%;
     border-radius: 5px;
     background-color: #fffff0;
     border-color: #010b13;
-    margin-left: 1.6%;
-}
-
-h2 {
-    font-family: arial;
-    margin-left: 30%;
 }
 
 button {
     font-size: 15pt;
     font-family: arial;
-    margin-left: 45%;
+    margin-left: 17%;
     margin-top: 2%;
     width: 10%;
-    height: 6%;
+    height: 5%;
     border-radius: 10px;
-    border-color: #010b13;
+    border-color: blanchedalmond;
     background-color: #fffff0;
 }
 

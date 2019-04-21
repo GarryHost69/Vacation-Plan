@@ -8,7 +8,9 @@ window.onload = function() {
     bg2 = document.getElementById('bg2'),
     bg3 = document.getElementById('bg3'),
     bg4 = document.getElementById('bg4'),
-    bg5 = document.getElementById('bg5');
+    bg5 = document.getElementById('bg5'),
+    bg6 = document.getElementById('bg6'),
+    bg7 = document.getElementById('bg7');
     setter = document.getElementById('travellers');
     backtotop = document.getElementById('backtotop');
     people = document.getElementById('people');
@@ -25,9 +27,25 @@ window.onload = function() {
     addChildren = document.getElementById("ch+");
     addAdults = document.getElementById("ad+");
     search = document.getElementById("countrySearch");
-    toast = document.getElementById("snackbar");
+    toast = document.getElementById("toast");
     date = new Date();
-    var min = date.getFullYear() + "-" + "0" + (parseInt(date.getMonth()) + 1) + "-" + "0" + date.getDate();
+    var min;
+    if ((date.getMonth() + 1).toString().length < 2) {
+        if (date.getDate().toString().length < 2) {
+            min = date.getFullYear() + "-" + "0" + (date.getMonth() + 1) + "-" + "0" + date.getDate();
+        }
+        else {
+            min = date.getFullYear() + "-" + "0" + (date.getMonth() + 1) + "-" + date.getDate();
+        }
+    }
+    else {
+        if (date.getDate().toString().length < 2) {
+            min = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + "0" + date.getDate();
+        }
+        else {
+            min = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+        }
+    }
     bg1.style.backgroundImage = "url(img/index1.jpg)";
     bg2.style.backgroundImage = "url(img/index2.jpg)";
     bg3.style.backgroundImage = "url(img/index3.jpg)";
@@ -217,6 +235,8 @@ window.onload = function() {
             month = '0' + month;
         }
         var mindate = year + "-" + month + "-" + day;
+        console.log(mindate);
+        
         checkout.value = mindate;
         checkout.min = mindate;
     });
@@ -390,9 +410,9 @@ function verify() {
         toast.style.height = "5%";
         toast.style.paddingTop = 15;
         toast.innerText = "Please Enter a Destination.";
-        toast.className = "show";
+        toast.className = "make";
         setTimeout(function() {
-            toast.className = toast.className.replace("show", "");
+            toast.className = toast.className.replace("make", "");
         }, 5000);
     }
     else 
@@ -401,9 +421,9 @@ function verify() {
         toast.style.height = "5%";
         toast.style.paddingTop = 15;
         toast.innerText = "Please Enter a Valid Destination.";
-        toast.className = "show";
+        toast.className = "make";
         setTimeout(function() {
-            toast.className = toast.className.replace("show", "");
+            toast.className = toast.className.replace("make", "");
         }, 5000);
     }
     else 
@@ -412,9 +432,9 @@ function verify() {
         toast.style.height = "5%";
         toast.style.paddingTop = 15;
         toast.innerText = "Please Select a Check In Date.";
-        toast.className = "show";
+        toast.className = "make";
         setTimeout(function() {
-            toast.className = toast.className.replace("show", "");
+            toast.className = toast.className.replace("make", "");
         }, 5000);
     }
     else 
@@ -423,9 +443,9 @@ function verify() {
         toast.style.height = "5%";
         toast.style.paddingTop = 15;
         toast.innerText = "Please Select a Check Out Date.";
-        toast.className = "show";
+        toast.className = "make";
         setTimeout(function() {
-            toast.className = toast.className.replace("show", "");
+            toast.className = toast.className.replace("make", "");
         }, 5000);
     }
     else {
